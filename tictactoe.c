@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include <termios.h>
 
@@ -83,7 +84,6 @@ bool check_straight( int (*get_field) (int, int) )
   for (int a = 0; a < 3; a++)
   {
     int owner = UNASSIGNED;
-    int b;
     
     for (int b = 0; b < 3; b++)
     {
@@ -124,7 +124,7 @@ bool check_for_win()
   
   for (int i = 0; i < 3; i++)
   {
-    int current_field = g_grid[i][2 - i];
+    int current_field = g_grid[i][i];
     if (i == 0)
     {
       owner = current_field;
